@@ -230,6 +230,51 @@ body main section div input:hover{
   cursor: pointer;
 }
 
+#cartel{
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: black;
+  border: 5px solid black;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  position: fixed;
+}
+
+#cartel h3{
+  font-size: 40px;
+  font-weight: 700;
+  color: violet;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 1.8);
+}
+
+#cartel div{
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
+  justify-content: center;
+  align-items: center;
+}
+
+#cartel div button{
+  width: 100px;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 900;
+  border: 2px solid violet;
+  background-color: black;
+  color: violet;
+}
+
+#cartel div button:hover{
+  cursor: pointer;
+}
 
 
 
@@ -379,6 +424,7 @@ body footer {
 }
 
 #cantidadDeBotellas{
+  text-align: center;
   width: 50px;
   position: relative;
   left: 170px;
@@ -386,7 +432,8 @@ body footer {
 }
 
 #total{
-  width: 50px;
+  text-align: center;
+  width: 70px;
   position: relative;
   left: 100px;
   bottom: 40px;
@@ -404,4 +451,29 @@ body footer {
 }
 .mainCarrito input:hover {
   cursor: pointer;
+}
+
+#cartel2{
+  width: 500px;
+  height: 300px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  background-color: black;
+  border: 5px solid violet;
+  position: absolute;
+  top: 200px;
+  left: 500px;
+  position: fixed;
+  display: none;
+}
+
+#cartel2 h3{
+  font-size: 40px;
+  font-weight: 700;
+  color: violet;
+  text-shadow: 5px 5px 15px rgba(0, 0, 0, 1.8);
 }

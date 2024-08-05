@@ -1,18 +1,17 @@
 
 
-const lista1 = document.getElementsByClassName('lista1');
-console.log(lista1);
-const botonMenuVinos = document.getElementById('menu-vinos');
-console.log(botonMenuVinos);
-const divMenuContenedor = document.getElementById('menu-contenedor');
-console.log(divMenuContenedor);
-const subMenuVinos = document.getElementsByClassName('submenu-vinos');
-console.log(subMenuVinos);
-const subMenuContendor = document.getElementsByClassName('submenu-contenedor');
-console.log(subMenuContendor);
-
-
 document.addEventListener('DOMContentLoaded', () =>{
+    const lista1 = document.getElementsByClassName('lista1');
+    console.log(lista1);
+    const botonMenuVinos = document.getElementById('menu-vinos');
+    console.log(botonMenuVinos);
+    const divMenuContenedor = document.getElementById('menu-contenedor');
+    console.log(divMenuContenedor);
+    const subMenuVinos = document.getElementsByClassName('submenu-vinos');
+    console.log(subMenuVinos);
+    const subMenuContendor = document.getElementsByClassName('submenu-contenedor');
+    console.log(subMenuContendor);
+
 
     botonMenuVinos.addEventListener('click', ()=>{
 
@@ -73,12 +72,44 @@ document.addEventListener('DOMContentLoaded', () =>{
         })
     })
 
+    
+
+    // function manejarCartel (){
+
+    //     const cartel = document.getElementById('cartel');
+    
+    //     document.getElementById('botonSi').addEventListener('click', (e)=>{
+    
+    //         if(e.target){
+    //             cartel.style.display = 'none';
+    //             localStorage.clear();
+    //             agregarCarrito();
+    //             comprar();
+    //         }
+            
+    //     })
+    
+    //     document.getElementById('botonNo').addEventListener('click', (e)=>{
+    
+    //         if(e.target){
+    //             cartel.style.display = 'none';
+    //             agregarCarrito();
+    //             comprar();
+    //         }
+    //     })
+    
+    // }
+
+    // manejarCartel();
+    localStorage.clear();
+
 })
 
+function agregarCarrito (){
 
-const agregarProducto = document.getElementsByClassName('agregar');
-const agregar = Array.from(agregarProducto);
-console.log(agregar);
+    const agregarProducto = document.getElementsByClassName('agregar');
+    const agregar = Array.from(agregarProducto);
+    console.log(agregar);
 
 
 
@@ -93,7 +124,7 @@ class Productos {
 class Carrito{
 
     constructor(){
-        this.productos = []
+        this.productos = [];
     }
 
     agregarProducto(producto) {
@@ -127,8 +158,11 @@ agregar.forEach(boton =>{
         console.log('carrito:', carrito.obtenerProductos());
 
         localStorage.setItem('carrito', JSON.stringify(carrito.obtenerProductos()));
+
+        // comprar();
+        })
     })
-})
+}
 
 const comprar = () =>{
 
@@ -149,7 +183,7 @@ const comprar = () =>{
         const tr = document.createElement('tr');
 
         const tdIndex = document.createElement('td');
-        tdIndex.innerText = index;
+        tdIndex.innerText = index + 1;
 
         const tdNombre = document.createElement('td');
         tdNombre.innerHTML = producto.nombre;
@@ -158,7 +192,7 @@ const comprar = () =>{
         tdPrecio.innerText = `$${producto.precio}`;
 
         const tdCantidad = document.createElement('td');
-        tdCantidad.innerText = '4';
+        tdCantidad.innerText = '1';
 
         tr.appendChild(tdIndex) ;
         tr.appendChild(tdNombre) ;
@@ -169,7 +203,25 @@ const comprar = () =>{
         
 
     })
+
+    const total = productosEnElCarrito.reduce((acc , el) => acc + Number(el.precio) , 0);
+
+    document.getElementById('total').innerText = `$${total}`;
+    console.log(total)
+
+    document.getElementById('cantidadDeBotellas').innerText = longCarrito;
 }
 
+agregarCarrito();
 comprar();
 
+const cartel = document.getElementById('cartel2');
+
+document.getElementById('comprar').addEventListener('click', (e)=>{
+    
+
+    if(e.target){
+        localStorage.clear()
+        cartel.style.display = 'flex';
+    }
+})

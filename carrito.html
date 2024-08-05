@@ -3,9 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <!-- Link de Css -->
+    <link rel="stylesheet" href="CSS/misestilos.css">
+    <!-- JavaScript -->
+    <script defer src="JS/script.js"></script>
+    <title>Carrito</title>
 </head>
 <body>
-    
+        <nav class="navCarrito">
+            <ul>
+                <li>
+                    <a href="index.html">Menu</a>
+                </li>
+            </ul>
+        </nav>
+        <main class="mainCarrito">
+            <h1>Carrito</h1>
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nombre del vino</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        
+                    </tbody>
+                    <tr id="trCantidadPrecio">
+                        
+                        <td id="cantidad" colspan="2">
+                            <p class="parrafo">Cantidad de botellas: <div><p id="cantidadDeBotellas"></p></div></p>
+                        </td>
+                        <td class="total" colspan="2"><p class="parrafo">Total:</p><div><p id="total"></p></div></td>
+                    </tr>
+                </table>
+
+            </section>
+
+            <input type="submit" name="Comprar" id="comprar" value="Comprar">
+        </main>
 </body>
 </html>

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+
 
 *{
     margin: 0;
@@ -18,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: scroll;
+    font-family: "Roboto Slab", serif;
   }
   body nav {
     width: 100%;
@@ -154,8 +157,80 @@ body {
 body main{
 
     width: 100%;
-    height: 120vh;
+    height: 140vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 300px;
+
 }
+
+body main h1{
+
+  font-size: 60px;
+  font-weight: 900;
+}
+
+body main h2{
+  font-size: 30px;
+  font-family: 700;
+  color: violet;
+  text-shadow: 5px 5px 20px rgb(0, 0, 0, 1.8);
+  text-decoration: underline black 5px;
+  margin-top: 100px;
+
+} 
+
+body main section{
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+body main section div{
+
+    width: 200px;
+    height: 200px;
+    margin-top: 20px;
+}
+
+body main section div img{
+    width: 100%;
+    height: 100%;
+}
+
+body main section div p{
+  width: 50px;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid black;
+  background-color: black;
+  color: violet;
+  font-size: 15px;
+  font-weight: 700;
+  position: relative;
+  bottom: 30px;
+}
+
+body main section div input{
+  background-color: black;
+  color: violet;
+  font-weight: 700px;
+  position: relative;
+  left: 140px;
+  bottom: 150px;
+}
+
+body main section div input:hover{
+
+  cursor: pointer;
+}
+
+
 
 
 /* Footer */
@@ -163,6 +238,7 @@ body main{
 body footer {
     display: flex;
     background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 40%;
   }
   body footer div {
     display: flex;
@@ -204,3 +280,128 @@ body footer {
     width: 60%;
     letter-spacing: 2px;
   }
+
+
+/* HTML DEL CARRITO */
+
+
+.navCarrito {
+  width: 100%;
+  height: 10vh;
+}
+.navCarrito ul li {
+  width: 140px;
+  height: 25px;
+  list-style: none;
+  text-align: center;
+  line-height: 25px;
+  background-color: black;
+  position: relative;
+  left: -130px;
+  top: 30px;
+  transition: all 3s;
+}
+.navCarrito ul li a {
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  color: violet;
+}
+.navCarrito ul li:hover {
+  left: 0px;
+}
+
+.mainCarrito {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+.mainCarrito section {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+.mainCarrito section table {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: violet;
+  border-collapse: collapse;
+  
+}
+.mainCarrito section table thead {
+  text-align: left;
+  border: 1px solid white;
+}
+.mainCarrito section table thead tr th {
+  padding: 8px;
+  height: 30px;
+  border: 1px solid white;
+}
+.mainCarrito section table thead tr th:nth-child(1) {
+  width: 20px;
+}
+.mainCarrito section table thead tr th:nth-child(2) {
+  width: 250px;
+}
+.mainCarrito section table thead tr th:nth-child(3) {
+  width: 100px;
+}
+.mainCarrito section table thead tr th:nth-child(4) {
+  width: 100px;
+}
+.mainCarrito section table tbody {
+  text-align: left;
+}
+.mainCarrito section table tbody tr td {
+  padding: 8px;
+  height: 30px;
+  border: 1px solid white;
+}
+
+.mainCarrito section table #trCantidadPrecio td{
+  width: 100%;
+  height: 100px;
+  
+}
+
+.mainCarrito section table #trCantidadPrecio td .parrafo{
+  width: 150px;
+  background-color:transparent;
+  border: none;
+}
+
+.mainCarrito section table #trCantidadPrecio td .parrafo div{
+
+  height: 100px;
+}
+
+#cantidadDeBotellas{
+  width: 50px;
+  position: relative;
+  left: 170px;
+  bottom: 40px;
+}
+
+#total{
+  width: 50px;
+  position: relative;
+  left: 100px;
+  bottom: 40px;
+}
+.mainCarrito input {
+  width: 150px;
+  height: 50px;
+  text-align: center;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 900;
+  color: violet;
+  background-color: black;
+  border-radius: 10px;
+}
+.mainCarrito input:hover {
+  cursor: pointer;
+}

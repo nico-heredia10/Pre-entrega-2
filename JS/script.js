@@ -74,3 +74,102 @@ document.addEventListener('DOMContentLoaded', () =>{
     })
 
 })
+
+
+const agregarProducto = document.getElementsByClassName('agregar');
+const agregar = Array.from(agregarProducto);
+console.log(agregar);
+
+
+
+class Productos {
+    constructor(nombre, precio){
+
+        this.nombre = nombre,
+        this.precio = precio
+    }
+}
+
+class Carrito{
+
+    constructor(){
+        this.productos = []
+    }
+
+    agregarProducto(producto) {
+        this.productos.push(producto);
+    }
+
+    obtenerProductos() {
+        return this.productos;
+    }
+}
+
+const carrito = new Carrito();
+
+agregar.forEach(boton =>{
+
+    boton.addEventListener('click', (e) =>{
+
+        const productoDiv = e.target.closest('.vinos');
+        console.log(productoDiv);
+
+        const precio = productoDiv.querySelector('span').innerText;
+        console.log(precio);
+        const nombre = productoDiv.querySelector('img').alt;
+        console.log(nombre);
+        
+        const producto = new Productos(nombre, precio);
+
+        carrito.agregarProducto(producto);
+
+        console.log('Producto agregado', producto);
+        console.log('carrito:', carrito.obtenerProductos());
+
+        localStorage.setItem('carrito', JSON.stringify(carrito.obtenerProductos()));
+    })
+})
+
+const comprar = () =>{
+
+    const productosEnElCarrito = JSON.parse(localStorage.getItem('carrito'));
+    console.log(productosEnElCarrito);
+    let longCarrito = productosEnElCarrito.length;
+    console.log(longCarrito);
+
+    const tabla = document.querySelectorAll('.td');
+    console.log(tabla);
+
+    const tbody = document.querySelector('tbody');
+    console.log(tbody);
+    tbody.innerText = '';
+
+    productosEnElCarrito.forEach((producto , index) =>{
+
+        const tr = document.createElement('tr');
+
+        const tdIndex = document.createElement('td');
+        tdIndex.innerText = index;
+
+        const tdNombre = document.createElement('td');
+        tdNombre.innerHTML = producto.nombre;
+
+        const tdPrecio = document.createElement('td');
+        tdPrecio.innerText = `$${producto.precio}`;
+
+        const tdCantidad = document.createElement('td');
+        tdCantidad.innerText = '4';
+
+        tr.appendChild(tdIndex) ;
+        tr.appendChild(tdNombre) ;
+        tr.appendChild(tdPrecio) ;
+        tr.appendChild(tdCantidad) ;
+
+        tbody.appendChild(tr);
+        
+
+    })
+}
+
+comprar();
+
